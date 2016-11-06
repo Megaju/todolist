@@ -42,9 +42,9 @@
     <footer>
         <span class="todo-count"><strong>{{ nbTaskUncompleted }}</strong> restantes et <strong>{{ nbTaskCompleted }}</strong> tâches complétées.</span>
         <ul class="filters">
-            <li><a href="#/alltasks" class="all">Toutes</a></li>
-            <li><a href="#/activetasks" class="active">En cours</a></li>
-            <li><a href="#/completetasks" class="complete">Complétées</a></li>
+            <li><a href="#/alltasks" class="all" ng-class="{selected : location.path() == '/alltasks'}">Toutes</a></li>
+            <li><a href="#/activetasks" class="active" ng-class="{selected : location.path() == '/activetasks'}">En cours</a></li>
+            <li><a href="#/completetasks" class="complete" ng-class="{selected : location.path() == '/completetasks'}">Complétées</a></li>
         </ul>
     </footer>
 </div>
