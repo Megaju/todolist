@@ -1,5 +1,5 @@
 var app = angular.module('todoApp', []);
-app.controller('todoCtrl', function($scope) {
+app.controller('todoCtrl', function($scope, filterFilter) {
     
     // Liste des total tâches
     $scope.todos = [
@@ -14,7 +14,10 @@ app.controller('todoCtrl', function($scope) {
     ];
     
     // Nombres de tâches en cours
-    $scope.nbRask = 2;
+    $scope.$watch('todos', function(){
+        $scope.nbTaskUncompleted = filterFilter($scope.todos, {completed:false}).length;
+        $scope.nbTaskCompleted = filterFilter($scope.todos, {completed:true}).length;
+    }, true) // on ajoute true en 3e paramètre pour dire qu'on l'observe tout le temps!
     
     // Fonction d'ajout de tâche
     $scope.addTask = function() {
