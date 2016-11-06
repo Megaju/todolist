@@ -21,7 +21,8 @@ app.controller('todoCtrl', function($scope) {
         $scope.todos.push({
             name : $scope.newTask,
             completed : false
-        })
+        });
+        $scope.newTask = '';
     }
     
     // Fonction de supression des tâches
