@@ -38,4 +38,9 @@ app.controller('todoCtrl', function($scope, filterFilter, $http) {
         })
     }
     
+    // Fonction pour modifier une tâche
+    $scope.editTask = function(todo) {
+        todo.editing = true;
+    }
+    
 });
