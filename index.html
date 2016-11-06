@@ -21,18 +21,19 @@
         </form>
         
         <div class="main">
-            <ul class="todo-list">
-                <li ng-repeat="todo in todos" ng-class="{completed : todo.completed}">
-                    <div class="view">
-                        <input type="checkbox" class="togle" ng-model="todo.completed">
-                        <label for="">{{ todo.name }}</label>
-                        <button class="destroy" ng-click="removeTask($index)">X</button>
-                    </div>
-                    <form action="#">
-                        <input type="text" class="edit" value="{{ todo.name }}">
-                    </form>
-                </li>
-            </ul>
+        <input type="checkbox" class="toggle-all" ng-model="allChecked" ng-click="checkAllTask(allChecked)">Tout cocher/décocher
+        <ul class="todo-list">
+            <li ng-repeat="todo in todos" ng-class="{completed : todo.completed}">
+                <div class="view">
+                    <input type="checkbox" class="togle" ng-model="todo.completed">
+                    <label for="">{{ todo.name }}</label>
+                    <button class="destroy" ng-click="removeTask($index)">X</button>
+                </div>
+                <form action="#">
+                    <input type="text" class="edit" value="{{ todo.name }}">
+                </form>
+            </li>
+        </ul>
         </div>
     </section>
 
