@@ -18,7 +18,7 @@ app.controller('todoCtrl', function($scope) {
     
     // Fonction de supression des tâches
     $scope.removeTask = function(index) {
-        alert(index);
+        $scope.todos.splice(index, 1); // on retire 1 élément à partir de l'élément lui-même.
     }
     
 });
