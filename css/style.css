@@ -6,3 +6,20 @@
     text-decoration: line-through;
     color: green;
 }
+
+.todo-list li {
+    position: relative;
+}
+
+.todo-list li form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid blue;
+    opacity: 0;
+    transition: .2s;
+}
+
+.todo-list li.editing form {
+    opacity: 1;
+}

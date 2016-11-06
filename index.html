@@ -23,14 +23,14 @@
         <div class="main">
         <input type="checkbox" class="toggle-all" ng-model="allChecked" ng-click="checkAllTask(allChecked)">Tout cocher/décocher
         <ul class="todo-list">
-            <li ng-repeat="todo in todos" ng-class="{completed : todo.completed, editing: todo.editing}" ng-dblclick="editTask(todo)">
+            <li ng-repeat="todo in todos" ng-class="{completed : todo.completed, editing: todo.editing}" ng-dblclick="todo.editing=true">
                 <div class="view">
                     <input type="checkbox" class="togle" ng-model="todo.completed">
                     <label for="">{{ todo.name }}</label>
                     <button class="destroy" ng-click="removeTask($index)">X</button>
                 </div>
                 <form action="#">
-                    <input type="text" class="edit" value="{{ todo.name }}">
+                    <input type="text" value="{{ todo.name }}" ng-model="todo.name" ng-blur="editTask(todo)">
                 </form>
             </li>
         </ul>

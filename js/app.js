@@ -38,9 +38,9 @@ app.controller('todoCtrl', function($scope, filterFilter, $http) {
         })
     }
     
-    // Fonction pour modifier une tâche
+    // Fonction pour confirmer la modification de la tâche
     $scope.editTask = function(todo) {
-        todo.editing = true;
+        todo.editing = false;
     }
     
 });
