@@ -1,3 +1,8 @@
 /* colors
  * #FCFEFE, #FFCA4F, #FDC94F, #1FCFC1, #26CEBE, #0F7885, #000000
 **/
+
+.completed {
+    text-decoration: line-through;
+    color: green;
+}
