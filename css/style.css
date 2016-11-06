@@ -7,11 +7,11 @@
     color: green;
 }
 
-.todo-list li {
+.view label {
     position: relative;
 }
 
-.todo-list li form {
+.view form {
     position: absolute;
     top: 0;
     left: 0;
@@ -20,6 +20,6 @@
     transition: .2s;
 }
 
-.todo-list li.editing form {
+.view .editing form {
     opacity: 1;
 }
