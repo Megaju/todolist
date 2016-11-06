@@ -19,14 +19,17 @@ body {
     color: #111;
 }
 
+/* pour que l'appli prenne toute la hauteur au chargement de la page. */
 header, footer {
     height: 20vh;
     background-color: #26CEBE;
 }
 section {
-    height: 60vh;
+    height: 55vh;
 }
-
+.tasks-actions {
+    height: 5vh;
+}
 
 /* ====================================================
    HEADER
@@ -54,12 +57,53 @@ h1 {
 }
 
 /* ====================================================
-   FOOTER
+   SECTION PRINCIPALE
    ==================================================== */
 
-footer {
-    
+.tasks-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0F7885;
 }
+
+.tasks-actions form input {
+    width: 200%;
+    height: 3vh;
+    padding: 0 10px;
+    border: 1px solid #1FCFC1;
+    outline: 0;
+    text-transform: capitalize;
+    color: #1FCFC1;
+}
+
+.tasks-actions form input:focus {
+    border: 1px solid #FFA226;
+    color: #FFA226;
+}
+
+.tasks-actions form {
+    margin-left: 25px;
+}
+
+.tasks-actions div {
+    margin-right: 25px;
+}
+
+.tasks-actions i {
+    color: #FFA226;
+}
+
+section {
+    overflow-y: scroll;
+    background-image: url(../images/bg.png);
+    background-size: cover;
+}
+
+
+/* ====================================================
+   FOOTER
+   ==================================================== */
 
 footer p {
     font-size: 1.5em;
