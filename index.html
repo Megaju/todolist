@@ -16,8 +16,8 @@
     </header>
     
     <section>
-        <form action="#">
-            <input type="text" class="new-todo" placeholder="Nouvelle tâche" autofocus autocomplete="off">
+        <form action="#" ng-submit="addTask()">
+            <input type="text" class="new-todo" placeholder="Nouvelle tâche" autofocus autocomplete="off" ng-model="newTask">
         </form>
         
         <div class="main">
