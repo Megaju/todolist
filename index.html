@@ -23,7 +23,7 @@
             </form>
             <div>
                 <i class="fa fa-check" aria-hidden="true"></i>
-                <input type="checkbox" class="toggle" ng-model="allChecked" ng-click="checkAllTask(allChecked)">
+                <input type="checkbox" class="toggle-all" ng-model="allChecked" ng-click="checkAllTask(allChecked)">
             </div>
         </div>
         
@@ -34,12 +34,14 @@
                         <div class="view">
                             <input type="checkbox" class="toggle" ng-model="todo.completed">
                             <label for="" ng-class="{editing: todo.editing}" ng-dblclick="todo.editing=true">
-                                {{ todo.name }}
-                                <form action="#">
-                                    <input type="text" value="{{ todo.name }}" ng-model="todo.name" ng-blur="editTask(todo)">
-                                </form>
+                                <p>
+                                    {{ todo.name }}
+                                    <form action="#">
+                                        <input type="text" value="{{ todo.name }}" ng-model="todo.name" ng-blur="editTask(todo)">
+                                    </form>
+                                </p>
                             </label>
-                            <button class="destroy" ng-click="removeTask($index)">X</button>
+                            <button class="destroy" ng-click="removeTask($index)"><i class="fa fa-window-close" aria-hidden="true"></i></button>
                         </div>
                     </li>
                 </ul>

@@ -42,8 +42,8 @@ header {
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     margin-left: 25px;
     background-image: url(../images/logo.svg);
 }
@@ -60,6 +60,11 @@ h1 {
    SECTION PRINCIPALE
    ==================================================== */
 
+section {
+    overflow-y: scroll;
+    background-image: url(../images/bg.png);
+}
+
 .tasks-actions {
     display: flex;
     justify-content: space-between;
@@ -73,7 +78,6 @@ h1 {
     padding: 0 10px;
     border: 1px solid #1FCFC1;
     outline: 0;
-    text-transform: capitalize;
     color: #1FCFC1;
 }
 
@@ -94,12 +98,80 @@ h1 {
     color: #FFA226;
 }
 
-section {
-    overflow-y: scroll;
-    background-image: url(../images/bg.png);
-    background-size: cover;
+
+.todo-list {
+    margin: 0;
+    padding: 0;
 }
 
+.todo-list li {
+    height: 100px;
+    list-style: none;
+    border-bottom: 1px solid #0F7885;
+} 
+
+.todo-list li:nth-child(odd) {
+    background-color: rgba(0, 0, 0, .2);
+}
+.todo-list li:nth-child(even) {
+    background-color: rgba(225, 255, 255, .4);
+}
+
+.view {
+    position: relative;
+    line-height: 100px;
+}
+
+.destroy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    border: 0;
+    color: #0F7885;
+    font-size: 2em;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.destroy:hover {
+    color: #FFA226;
+}
+
+.toggle {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 99;
+}
+
+label p {
+    position: relative;
+    margin: 0 0 0 50px;
+    font-size: 2em;
+}
+
+.view label {
+    position: relative;
+}
+
+.view form input {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    left: 50px;
+    width: 1000px;
+    height: 100px;
+    font-size: 2em;
+    opacity: 0;
+    border: 0;
+    transition: .2s;
+}
+
+.view .editing form input {
+    outline: 0;
+    opacity: 1;
+}
 
 /* ====================================================
    FOOTER
@@ -142,25 +214,7 @@ footer ul li a:hover, .selected {
 }
 
 
-
-
 .completed {
     text-decoration: line-through;
-    color: green;
-}
-
-.view label {
-    position: relative;
-}
-
-.view form {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: .2s;
-}
-
-.view .editing form {
-    opacity: 1;
+    color: #0F7885;
 }
