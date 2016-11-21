@@ -1,15 +1,12 @@
 var app = angular.module('todoApp', []);
 app.controller('todoCtrl', function($scope, filterFilter, $http, $location) {
     
-    // Liste des total tâches
-    $scope.todos = [];
-    $scope.placeholder = "Chargement . . .";
-    $scope.status = {};
-    
-    $http.get('tasks.php').success(function(data){
-        $scope.todos = data;
-        $scope.placeholder = "Ajouter une nouvelle tâche";
-    })
+    $http({
+        method:'GET',
+        url : 'tasks.json'
+    }).then(function (response) {
+    $scope.todos = response.data.records;
+    });
     
     // Nombres de tâches en cours + détecter si tout est coché (voir fonction checkAllTask)
     $scope.$watch('todos', function(){
