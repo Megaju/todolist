@@ -19,7 +19,8 @@
         
         <div class="tasks-actions">
             <form action="#" ng-submit="addTask()">
-                <input type="text" class="new-todo" placeholder="{{ placeholder }}" autofocus autocomplete="off" ng-model="newTask">
+                <input type="text" class="new-todo" placeholder="Ajouter une tâche" autofocus autocomplete="off" ng-model="newTask">
+                <input class="btn-submit" type="submit" value="OK">
             </form>
             <div>
                 <i class="fa fa-check" aria-hidden="true"></i>
@@ -34,7 +35,7 @@
                         <div class="view">
                             <input type="checkbox" class="toggle" ng-model="todo.completed">
                             <label for="" ng-class="{editing: todo.editing}" ng-dblclick="todo.editing=true">
-                                <p>
+                                <p class="todo-name">
                                     {{ todo.name }}
                                     <form action="#">
                                         <input type="text" value="{{ todo.name }}" ng-model="todo.name" ng-blur="editTask(todo)">
@@ -49,12 +50,15 @@
         </section>
     
         <footer>
-            <ul class="filters">
+            <ul>
                 <li><a href="#/alltasks" class="all" ng-class="{selected : location.path() == '/alltasks'}">Toutes</a></li>
                 <li><a href="#/activetasks" class="active" ng-class="{selected : location.path() == '/activetasks'}">En cours</a></li>
                 <li><a href="#/completetasks" class="complete" ng-class="{selected : location.path() == '/completetasks'}">Complétées</a></li>
             </ul>
-            <div class="todo-count"><p><strong>{{ nbTaskUncompleted }}</strong> tâches restantes et <strong>{{ nbTaskCompleted }}</strong> complétées.</p></div>
+            <div class="todo-count">
+                <p><strong>{{ nbTaskUncompleted }}</strong> tâches restantes et <strong>{{ nbTaskCompleted }}</strong> complétées.</p>
+            </div>
+            <p class="credit">Todolist de Julien Malle. <a href="https://github.com/Megaju" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Mon profil Github</a></p>
         </footer>
     </div>
 </body>

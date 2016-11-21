@@ -22,7 +22,7 @@ body {
 /* pour que l'appli prenne toute la hauteur au chargement de la page. */
 header, footer {
     height: 20vh;
-    background-color: #26CEBE;
+    background-color: #93BACC;
 }
 section {
     height: 55vh;
@@ -65,25 +65,48 @@ section {
     background-image: url(../images/bg.png);
 }
 
+.todo-name:first-letter {
+    text-transform: capitalize;
+}
+
 .tasks-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #0F7885;
+    background-color: #324A5E;
+}
+
+.tasks-actions form {
+    display: flex;
+    align-items: center;
 }
 
 .tasks-actions form input {
     width: 200%;
     height: 3vh;
     padding: 0 10px;
-    border: 1px solid #1FCFC1;
+    border: 1px solid #324A5E;
+    text-transform: uppercase;
     outline: 0;
-    color: #1FCFC1;
+    color: #324A5E;
 }
 
 .tasks-actions form input:focus {
-    border: 1px solid #FFA226;
-    color: #FFA226;
+    border: 1px solid #93BACC;
+    color: #FC7862;
+}
+
+.tasks-actions form input.btn-submit {
+    width: 50px;
+    margin-left: 5px;
+    background-color: #FC7862;
+    border: 1px solid #C9604E;
+    transition: .4s;
+}
+
+.tasks-actions form input.btn-submit:hover {
+    filter: brightness(120%);
+    cursor: pointer;
 }
 
 .tasks-actions form {
@@ -95,7 +118,7 @@ section {
 }
 
 .tasks-actions i {
-    color: #FFA226;
+    color: #FC7862;
 }
 
 
@@ -107,7 +130,7 @@ section {
 .todo-list li {
     height: 100px;
     list-style: none;
-    border-bottom: 1px solid #0F7885;
+    border-bottom: 1px solid #324A5E;
 } 
 
 .todo-list li:nth-child(odd) {
@@ -128,14 +151,14 @@ section {
     left: 0;
     background-color: transparent;
     border: 0;
-    color: #0F7885;
+    color: #31495E;
     font-size: 2em;
     transition: .2s;
     cursor: pointer;
 }
 
 .destroy:hover {
-    color: #FFA226;
+    color: #FC7862;
 }
 
 .toggle {
@@ -173,23 +196,32 @@ label p {
     opacity: 1;
 }
 
+.btn-submit {
+    width: 20px;
+    height: 20px;
+}
+
 /* ====================================================
    FOOTER
    ==================================================== */
 
+footer {
+    align-items: center;
+}
+
 footer p {
-    font-size: 1.5em;
     text-align: center;
 }
 
 footer ul {
     margin: 0 auto;
+    height: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 footer ul li {
-    margin: 50px 0 25px 0;
     list-style: none;
 }
 
@@ -201,20 +233,33 @@ footer ul li a {
     text-transform: uppercase;
     text-decoration: none;
     color: #222;
-    border: 1px solid #FFCA4F;
-    background-color: #FFA226;
-    box-shadow: 0 2px 0 #FFCA4F;
+    border: 1px solid #FC7862;
+    background-color: #C9604E;
+    box-shadow: 0 2px 0 #7C3B30;
     transition: .2s;
 }
 
 footer ul li a:hover, .selected {
-    border: 1px solid #FFA92B;
-    background-color: #FFCA4F;
-    box-shadow: 0 2px 0 #FFA226;
+    filter: brightness(125%);
+    cursor: pointer;
 }
-
 
 .completed {
     text-decoration: line-through;
     color: #0F7885;
+}
+
+.credit {
+    color: #324A5E;
+}
+
+.credit a {
+    text-decoration: none;
+    color: #7C3B30;
+    transition: .4s;
+}
+
+.credit a:hover {
+    filter: brightness(200%);
+    text-shadow:  0 1px 0 #111;
 }
